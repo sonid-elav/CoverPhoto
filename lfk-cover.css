@@ -1,0 +1,208 @@
+.loading {
+	background-image: url('http://www.leumit.co.il/minisites/personalcare/content/images/loader01.gif');
+	background-size: 64px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* COVER PHOTO STYLE */
+
+.cover-photo-wrapper {
+    background-color: #070826;
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+}
+
+.cover-photo-relative {
+	width: 100%; height: 100%;
+	position: relative;
+	overflow: hidden;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* PICTURE COVER */
+.cover-photo-wrapper img.cover-photo {
+	position: absolute;
+	left: 0px; top: 0px;
+	width: 100%;
+	height: auto;
+	cursor: move;
+}
+
+@media screen and (max-width: 1200px) {
+	.cover-photo-wrapper img.cover-photo {
+		/**top: 0px !important;*/
+	}
+}
+@media screen and (max-width: 690px) {
+	.cover-photo-wrapper img.cover-photo {
+		/*top: 0px !important;*/
+		/*height: 100%;*/
+		/*width: auto;*/
+	}
+}
+
+.cover-photo-wrapper .actions {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+.cover-photo-wrapper .actions button {
+	background-color: #E4E4E4;
+	border: solid 1px #989898;
+	font-weight: normal;
+	color: #000;
+	padding: 4px 12px;
+	font-size: 12pt;
+	cursor: pointer;
+}
+
+.cover-photo-wrapper .upload-cover {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+.cover-photo-wrapper .upload-cover .label-button {
+    background-color: #E4E4E4;
+    color: #000;
+    font-size: 12pt;
+    padding: 4px 12px;
+    border: solid 1px #989898;
+    display: block;
+    cursor: pointer;
+}
+
+/* INFO */
+.cover-photo-relative .actions {
+    right: 10px; top: 8px;
+    position: absolute;
+    background-color: #eee;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.cover-photo-relative .actions a {
+	text-decoration: none;
+	color: #666;
+}
+.cover-photo-relative .actions a:hover {
+	color: #333;
+}
+
+.cover-photo-relative .cover-photo-info {
+	text-shadow: 1px 1px 6px #000;
+	color: #fff;
+}
+.cover-photo-relative .cover-photo-info > ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.cover-photo-relative .cover-photo-info > ul > li {
+	text-align: center;
+}
+.cover-photo-relative .cover-photo-info > ul > li:nth-child(1) {
+	padding-bottom: 2em;
+}
+
+/* HEADERS */
+.cover-photo-relative .cover-photo-info > ul > li h1,
+.cover-photo-relative .cover-photo-info > ul > li h3 {
+	margin: 0px; 
+	padding: 0px;
+}
+.cover-photo-relative .cover-photo-info > ul > li h1 {
+	font-size: 55px;
+}
+.cover-photo-relative .cover-photo-info > ul > li h3 {
+	font-size: 24px;
+}
+
+/* SUB-INFO */
+.cover-photo-relative .cover-photo-info > ul > li > span {
+	display: block;
+	padding: 2px 0px;
+	font-size: 14pt;
+}
+.cover-photo-relative .cover-photo-info > ul > li > span.followers {
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+/* BUTTONS */
+.cover-photo-relative .cover-photo-buttons {
+	margin-top: 2em;
+	text-align: center;
+}
+.cover-photo-relative .cover-photo-buttons ul {
+	list-style: none; 
+	padding: 0px; margin: 0px;
+	overflow: auto; 
+	display: inline-block;
+}
+.cover-photo-relative .cover-photo-buttons ul li {
+	float: left;
+	padding: 2px 8px;
+}
+
+.cover-photo-relative .cover-photo-buttons ul li a {
+	background-color: #CA3204;
+	/*background-color: #E05327;*/
+	color: #fefefe;
+
+	padding: 4px 20px;
+	text-decoration: none;
+	font-size: 12pt;
+	font-weight: bold;
+	display: block;
+
+	border-radius: 32px;
+}
+
+/* DEGRADE FADE */
+.cover-photo-wrapper .cover-degrate {
+    background-image: -webkit-gradient(linear, left top, left bottom, from( rgba(22, 24, 27, 0)), to( rgba(22, 24, 27, 0.8)));
+    background-image: -webkit-linear-gradient( rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.8));
+    background-image: -moz-linear-gradient( rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.8));
+    background-image: -ms-linear-gradient( rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.8));
+    background-image: -o-linear-gradient( rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.8));
+    background-image: linear-gradient( rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.8));
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 100%;
+}
+
+/* TRANSITIONS */
+
+.fade-transition {
+	transition: opacity .5s ease;
+	opacity: 1.0;
+}
+.fade-enter, .fade-leave {
+	opacity: 0;
+}
+
+/* UPLOAD FORM */
+#upload_form {
+	margin:0px;
+	padding:0px;
+}
+#upload_form input[type="file"] {
+	width: 100px;
+	visibility:hidden;
+	position:absolute;
+	top:-50; left:-50
+}
+#upload_form button {
+	background-color: #E4E4E4;
+	border: solid 1px #989898;
+	font-weight: normal;
+	color: #000;
+	padding: 4px 12px;
+	font-size: 12pt;
+	cursor: pointer;
+}

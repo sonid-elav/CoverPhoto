@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cover Photo Widget</title>
+    <style>
+    	* {
+    		outline: none;
+    	}
+
+	    body {
+		  font-family: 'Segoe UI', monospace;
+		  padding: 0px; margin: 0px;
+
+		}
+    </style>
+
+    <link rel="stylesheet" href="lfk-cover.css">
+</head>
+<body>
+
+	<script type="text/x-template" id="cover-photo-template">
+		<div>
+			<div class="cover-photo-wrapper">
+				<img class="cover-photo">
+				<div class="cover-degrate" v-if="!editCover" transition="fade"></div>
+
+				<div class="actions" v-if="editCover">
+					<button @click="cancelCover">Cancel</button>
+					<button @click="savePosition" v-if="canSave">Save</button>
+				</div>
+
+				<div class="upload-cover" v-if="editCover">
+				<form id="upload_form" method="post" :action="upload_url" enctype="multipart/form-data">
+					<!-- <label for="upload_cover">Upload Cover</label> -->
+					<button @click="selectFile">Upload Cover</button>
+					<input type="file" id="upload_cover" name="cover_photo" @change="uploadFile">
+					<button type="submit" style="display:none"></button>
+				</form>
+				
+				</div>
+			</div>
+
+			<div class="cover-photo-relative" v-show="!editCover" transition="fade"
+				@mouseover="mouseover" @mouseleave="mouseleave">
+
+				<div class="actions" v-if="showEdit" transition="fade">
+					<a href="javascript:void(0)" @click="coverEdit">Edit Cover</a>
+				</div>
+
+				<div class="cover-photo-info">
+
+					<ul>
+						<li>
+							<h1>CoverPhoto Widget</h1>
+							<h3>Vue.js, MooTools</h3>
+						</li>
+						<li>
+							<span class="followers">0 followers</span>
+							<span class="event-date">
+								version 1.00a
+							</span>
+							<span class="event-loc">
+								Javascipt, PHP
+							</span>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="cover-photo-buttons">
+					<ul>
+						<li><a href="javascript:void(0)">Follow</a></li>
+						<li><a href="javascript:void(0)">Request Attend</a></li>
+						<li><a href="javascript:void(0)">Share</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</script>
+
+
+	<div id="photo-cover" 
+			:cover-height="'400px'"
+			:cover-src="'http://www.jewtastic.com/wp-content/themes/periodic/images/thumbnails/thumbnail-leadimg.jpg'"
+			:can-edit="true">
+	</div>
+
+	<div style="height: 1000px; width: 100%"></div>
+
+
+
+
+
+	<script src="../libs/mootools.js"></script>
+	<script src="../libs/mootools-more.js"></script>
+	<script src="../libs/vue/vue.js"></script>
+
+	<script src="lfk-cover.js"></script>
+	<script>
+	(function(w){
+		var lfk = w.lfk || {};
+		if(!lfk) throw new Error('lfk is missing!');
+
+		w.Cover = new lfk.CoverPhoto({
+			element: '#photo-cover'
+		});
+
+
+	})(window);
+	</script>
+</body>
+</html>

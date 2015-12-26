@@ -170,11 +170,14 @@
 							url = sessionStorage.getItem('cover_url'),
 							cover_pos=null;
 
-						if(url && json_str) {
+						if(json_str) {
 							cover_pos = JSON.parse(json_str);
 							if(cover_pos) {
 								this.$set('cover_position', cover_pos);
 							}
+						}
+
+						if(url) {
 							img.fade('out').set('src', url);
 						} else {
 							img.fade('out').set('src', this.coverSrc);
